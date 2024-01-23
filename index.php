@@ -33,5 +33,39 @@ $f3->route('GET /breakfast', function() {
     echo $view->render('views/breakfast-menu.html');
 });
 
+// Define a breakfast route
+$f3->route('GET|POST /order1', function($f3) {
+    //echo "Order Form Part I";
+
+    // If the form has been posted
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        // Validate the data
+        $food = $_POST['food'];
+        $meal = $_POST['meal'];
+
+        // Put the data in the session array
+        $f3->set('SESSION.food', $food);
+        $f3->set('SESSION.meal', $meal);
+
+        // Redirect to order2 route
+        $f3->reroute('summary');
+
+    }
+
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/order-form-1.html');
+});
+
+// Define an order summary route
+$f3->route('GET /summary', function() {
+    //echo "Thank you for your order!";
+
+    // Display a view page
+    $view = new Template();
+    echo $view->render('views/order-summary.html');
+});
+
 // Run Fat-Free
 $f3->run(); //instance method
