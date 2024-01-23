@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <title>My Diner</title>
+</head><body>
+<div class="container">
+    <h1>The Diner:  Order Form Part 2</h1>
+
+    <form action="#" method="post" class="form-horizontal">
+
+        <!-- get condiments -->
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Select condiments</label>
+            <div class="col-sm-4">
+                <label><input type="checkbox"
+                              name="conds[]"
+                              value="ketchup"
+                > ketchup</label><br>
+                <label><input type="checkbox"
+                              name="conds[]"
+                              value="mustard"
+                > mustard</label><br>
+                <label><input type="checkbox"
+                              name="conds[]"
+                              value="mayo"
+                > mayo</label><br>
+                <label><input type="checkbox"
+                              name="conds[]"
+                              value="sriracha"
+                > sriracha</label><br>
+                <!-- Display an error if there is one -->
+            </div>
+        </div>
+
+        <div class="col-xs-1 ">
+            <button type="submit">Place Order</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>

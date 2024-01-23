@@ -33,7 +33,7 @@ $f3->route('GET /breakfast', function() {
     echo $view->render('views/breakfast-menu.html');
 });
 
-// Define a breakfast route
+// Define a order form 1 route
 $f3->route('GET|POST /order1', function($f3) {
     //echo "Order Form Part I";
 
@@ -49,13 +49,37 @@ $f3->route('GET|POST /order1', function($f3) {
         $f3->set('SESSION.meal', $meal);
 
         // Redirect to order2 route
+        $f3->reroute('order2');
+    }
+});
+
+// Define a order form 2 route
+$f3->route('GET|POST /order2', function($f3) {
+    //echo "Order Form Part II";
+
+    // If the form has been posted
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        // Validate the data
+        if (isset($_POST['conds'])){
+            $conds = implode(", ", $_POST['conds']);
+        }
+        else {
+            $conds = "None selected";
+        }
+
+        // Put the data in the session array
+        $f3->set('SESSION.conds', $conds);
+
+        // Redirect to summary route
         $f3->reroute('summary');
 
     }
 
     // Display a view page
     $view = new Template();
-    echo $view->render('views/order-form-1.html');
+    echo $view->render('views/order-form-2.html');
+
 });
 
 // Define an order summary route
