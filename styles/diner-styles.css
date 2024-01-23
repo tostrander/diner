@@ -1,0 +1,12 @@
+img {
+    /* Temporary fix! */
+    width: 50%;
+}
+
+a.btn-primary {
+    background-color: darkolivegreen;
+}
+
+h1 {
+    color: darkolivegreen;
+}
