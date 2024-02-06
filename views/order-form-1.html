@@ -33,34 +33,17 @@
             <label class="col-sm-4 control-label">Select a meal</label>
             <div class="col-sm-4">
                 <p>You chose </p>
-                <label><input type="radio"
-                              name="meal"
-                              id="breakfast"
-                              value="breakfast"
-                > Breakfast
-                    </input>
-                </label><br>
-                <label><input type="radio"
-                              name="meal"
-                              id="brunch"
-                              value="brunch"
-                > Brunch
-                    </input>
-                </label><br>
-                <label><input type="radio"
-                              name="meal"
-                              id="lunch"
-                              value="lunch"
-                > Lunch
-                    </input>
-                </label><br>
-                <label><input type="radio"
-                              name="meal"
-                              id="dinner"
-                              value="dinner"
-                > Dinner
-                    </input>
-                </label><br>
+
+                <repeat group="{{ @meals }}" value="{{ @meal }}">
+                    <label>
+                        <input type="radio"
+                                  name="meal"
+                                  id="{{ @meal }}"
+                                  value="{{ @meal }}"
+                        > {{ ucwords(@meal) }}
+                        </input>
+                    </label><br>
+                </repeat>
 
                 <!-- Display an error if there is one -->
 
