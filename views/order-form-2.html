@@ -24,7 +24,7 @@
                     <label><input type="checkbox"
                                   name="conds[]"
                                   value="{{ @condiment }}"
-                    > {{ @condiment }}</label><br>
+                    > {{ ucwords(@condiment) }}</label><br>
                 </repeat>
                 <!-- Display an error if there is one -->
             </div>
