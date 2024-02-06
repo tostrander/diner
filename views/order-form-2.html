@@ -20,22 +20,12 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">Select condiments</label>
             <div class="col-sm-4">
-                <label><input type="checkbox"
-                              name="conds[]"
-                              value="ketchup"
-                > ketchup</label><br>
-                <label><input type="checkbox"
-                              name="conds[]"
-                              value="mustard"
-                > mustard</label><br>
-                <label><input type="checkbox"
-                              name="conds[]"
-                              value="mayo"
-                > mayo</label><br>
-                <label><input type="checkbox"
-                              name="conds[]"
-                              value="sriracha"
-                > sriracha</label><br>
+                <repeat group="{{ @condiments }}" value="{{ @condiment }}">
+                    <label><input type="checkbox"
+                                  name="conds[]"
+                                  value="{{ @condiment }}"
+                    > {{ @condiment }}</label><br>
+                </repeat>
                 <!-- Display an error if there is one -->
             </div>
         </div>

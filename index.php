@@ -83,6 +83,9 @@ $f3->route('GET|POST /order2', function($f3) {
 
     }
 
+    // Add data to the F3 "hive"
+    $f3->set('condiments', array('ketchup', 'mustard', 'mayo'));
+
     // Display a view page
     $view = new Template();
     echo $view->render('views/order-form-2.html');
