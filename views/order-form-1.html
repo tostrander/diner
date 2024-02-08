@@ -13,6 +13,9 @@
                 <input class="form-control" type="text" name="food" id="food" value="">
 
                 <!-- Display an error if there is one -->
+                <check if="{{ isset(@errors['food']) }}">
+                    {{ @errors['food'] }}
+                </check>
             </div>
         </div>
         <br>
