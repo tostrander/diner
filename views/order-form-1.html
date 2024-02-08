@@ -14,7 +14,7 @@
 
                 <!-- Display an error if there is one -->
                 <check if="{{ isset(@errors['food']) }}">
-                    {{ @errors['food'] }}
+                    <span class="err">{{ @errors['food'] }}</span>
                 </check>
             </div>
         </div>
@@ -38,7 +38,9 @@
                 </repeat>
 
                 <!-- Display an error if there is one -->
-
+                <check if="{{ isset(@errors['meal']) }}">
+                    <span class="err">{{ @errors['meal'] }}</span>
+                </check>
             </div>
         </div>
 

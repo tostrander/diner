@@ -10,3 +10,7 @@ a.btn-primary {
 h1 {
     color: darkolivegreen;
 }
+
+.err {
+    color: darkred;
+}
