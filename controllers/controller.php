@@ -111,4 +111,13 @@ class Controller
         $view = new Template();
         echo $view->render('views/order-summary.html');
     }
+
+    function view()
+    {
+        //echo "Thank you for your order!";
+
+        // Display a view page
+        $view = new Template();
+        echo $view->render('views/view-orders.html');
+    }
 }
