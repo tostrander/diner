@@ -114,7 +114,11 @@ class Controller
 
     function view()
     {
-        //echo "Thank you for your order!";
+        //echo "Thank you for order!";
+
+        // Get the orders from the model
+        $orders = $GLOBALS['dataLayer']->getOrders();
+        $this->_f3->set('orders', $orders);
 
         // Display a view page
         $view = new Template();

@@ -29,6 +29,16 @@ var_dump($order);
 $f3 = Base::instance(); //static method
 $con = new Controller($f3);
 
+// Instantiate DataLayer class
+$dataLayer = new DataLayer();
+
+// Test DataLayer class
+/*
+echo "<pre>";
+var_dump($dataLayer->getOrders());
+echo "</pre>";
+*/
+
 // Define a default route
 $f3->route('GET /', function() {
     $GLOBALS['con']->home();
@@ -59,7 +69,7 @@ $f3->route('GET /summary', function() {
 });
 
 // Define a view orders route
-$f3->route('GET /view', function() {
+$f3->route('GET /view-orders', function() {
     $GLOBALS['con']->view();
 });
 

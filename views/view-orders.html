@@ -4,6 +4,11 @@
   <h1>GRC Diner</h1>
   <h2>View Orders</h2>
 
+  <repeat group = "{{ @orders }}" value = "{{ @order }}">
+    <p>{{ @order.order_id }}, {{ @order.food }}, {{ @order.meal }},
+       {{ @order.condiments }}, {{ @order.date_time }}</p>
+  </repeat>
+
   <a href="{{ @BASE }}">Home Page</a>
 
 </div>
