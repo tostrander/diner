@@ -6,6 +6,7 @@
   <p>You ordered {{ @SESSION.order->getFood() }} for
       {{ @SESSION.order->getMeal() }}</p>
   <p>Condiments:  {{ @SESSION.order->getCondiments() }}</p>
+  <p>Order ID: {{ @orderId }}</p>
 
     <a href="{{ @BASE }}">Home Page</a>
     <a href="order1">Place another order</a>

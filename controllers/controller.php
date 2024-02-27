@@ -107,6 +107,10 @@ class Controller
     {
         //echo "Thank you for your order!";
 
+        // Save order to Database
+        $orderId = $GLOBALS['dataLayer']->saveOrder($this->_f3->get('SESSION.order'));
+        $this->_f3->set('orderId', $orderId);
+
         // Display a view page
         $view = new Template();
         echo $view->render('views/order-summary.html');
