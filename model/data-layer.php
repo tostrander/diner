@@ -9,3 +9,8 @@ function getMeals()
 {
     return array('breakfast', 'brunch', 'lunch', 'dinner', 'dessert');
 }
+
+function getCondiments()
+{
+    return array('ketchup', 'mustard', 'sriracha', 'kim chi', 'sour cream');
+}

@@ -1,3 +1,7 @@
 h1 {
     color: darkgreen;
 }
+
+.err {
+    color: darkred;
+}

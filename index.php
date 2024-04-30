@@ -91,19 +91,22 @@ $f3->route('GET|POST /order1', function($f3) {
             $f3->set('errors["food"]', 'Please enter a food');
         }
 
-        if (isset($_POST['meal'])) {
-            $meal = $_POST['meal'];
+        if (isset($_POST['meal']) and validMeal($_POST['meal'])) {
+                $meal = $_POST['meal'];
         }
         else {
-            $meal = "Lunch";
+            $f3->set('errors["meal"]', 'Please select a meal');
         }
 
         // Add the data to the session array
         $f3->set('SESSION.food', $food);
         $f3->set('SESSION.meal', $meal);
 
+        // If there are no errors,
         // Send the user to the next form
-        $f3->reroute('order2');
+        if(empty($f3->get('errors'))) {
+            $f3->reroute('order2');
+        }
     }
 
     // Get the data from the model
