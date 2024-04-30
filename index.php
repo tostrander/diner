@@ -7,8 +7,10 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-// Require the autoload file
+// Require the necessary files
 require_once ('vendor/autoload.php');
+require_once ('model/data-layer.php');
+//var_dump(getMeals());
 
 // Instantiate the F3 Base class
 $f3 = Base::instance();
@@ -71,8 +73,14 @@ $f3->route('GET|POST /order1', function($f3) {
         //var_dump ($_POST);
 
         // Get the data from the post array
+        //var_dump($_POST);
         $food = $_POST['food'];
-        $meal = $_POST['meal'];
+        if (isset($_POST['meal'])) {
+            $meal = $_POST['meal'];
+        }
+        else {
+            $meal = "Lunch";
+        }
 
         // If the data valid
         if (true) {
@@ -89,6 +97,11 @@ $f3->route('GET|POST /order1', function($f3) {
             echo "<p>Validation errors</p>";
         }
     }
+
+    // Get the data from the model
+    // and add it to the F3 hive
+    $meals = getMeals();
+    $f3->set('meals', $meals);
 
     // Render a view page
     $view = new Template();
