@@ -1,0 +1,28 @@
+
+/* Test the Validate class
+if (Validate::validFood('tacos')) {
+    echo "This is valid";
+}
+*/
+
+/* Test the DataLayer class
+var_dump(DataLayer::getMeals());
+*/
+
+/* Test the Order class
+echo "<pre>";
+$order = new Order('pad thai', 'lunch', ['soy sauce']);
+var_dump($order);
+$order2 = new Order();
+$order2->setFood('nachos');
+$order2->setMeal('dinner');
+$order2->setCondiments(['salsa', 'guacamole']);
+var_dump($order2);
+echo "</pre>";
+*/
+
+/* Test Code
+$testFood = '   xy   ';
+echo validFood($testFood) ? "valid": "not valid";
+var_dump(validFood($testFood));
+*/
