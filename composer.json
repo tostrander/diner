@@ -4,6 +4,10 @@
     {
       "name": "Tina Ostrander",
       "email": "tostrander@greenriver.edu"
+    },
+    {
+      "name": "Ken Hang",
+      "email": "khang@greenriver.edu"
     }
   ],
   "require":
@@ -12,6 +16,6 @@
   },
   "autoload":
   {
-    "classmap": ["classes/", "model/"]
+    "classmap": ["classes/", "model/", "controllers/"]
   }
 }
