@@ -1,0 +1,31 @@
+<!-- diner/views/order-summary.html -->
+
+<include href="views/header.html"></include>
+<body>
+<div class="container">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Food</th>
+                <th>Meal</th>
+                <th>Condiments</th>
+                <th>Order Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <repeat group="{{ @orders }}" value="{{ @order }}">
+                <tr>
+                    <td>{{ @order.order_id }}</td>
+                    <td>{{ @order.food }}</td>
+                    <td>{{ @order.meal }}</td>
+                    <td>{{ @order.condiments }}</td>
+                    <td>{{ @order.date_time }}</td>
+                </tr>
+            </repeat>
+        </tbody>
+
+</div>
+</body>
+</html>

@@ -135,4 +135,15 @@ class Controller
         //var_dump ( $f3->get('SESSION') );
         session_destroy();
     }
+
+    function admin()
+    {
+        // Get the data from the model
+        $result = $GLOBALS['dataLayer']->getOrders();
+        $this->_f3->set('orders', $result);
+
+        // Display a view page
+        $view = new Template();
+        echo $view->render('views/admin.html');
+    }
 }

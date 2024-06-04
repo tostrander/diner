@@ -19,12 +19,19 @@ $dataLayer = new DataLayer();
 $myOrder = new Order('breakfast', 'pancakes', 'maple syrup');
 $id = $dataLayer->saveOrder($myOrder);
 echo "Order $id inserted successfully!";
+
+$result = $dataLayer->getOrders();
+var_dump($result);
 */
 
 // Define a default route
 // https://tostrander.greenriverdev.com/328/hello-fat-free/
 $f3->route('GET /', function() {
     $GLOBALS['con']->home();
+});
+
+$f3->route('GET /admin', function() {
+    $GLOBALS['con']->admin();
 });
 
 // Breakfast menu
