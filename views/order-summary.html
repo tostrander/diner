@@ -7,7 +7,7 @@
     <h1>Thank you for ordering {{ @SESSION.order->getFood() }}
         for {{ @SESSION.order->getMeal() }}!</h1>
     <p>Condiments: {{ @SESSION.order->getCondiments() }}</p>
-
+    <p>Order ID: {{ @id }}</p>
     <a href="order1">Place another order</a><br>
     <a href="{{ @BASE }}">Home page</a>
 </div>

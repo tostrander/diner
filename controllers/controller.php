@@ -119,4 +119,20 @@ class Controller
         $view = new Template();
         echo $view->render('views/order2.html');
     }
+
+    function summary()
+    {
+        // Write data to database
+        $order = $this->_f3->get('SESSION.order');
+        $id = $GLOBALS['dataLayer']->saveOrder($order);
+        $this->_f3->set('id', $id);
+        //echo "Order $id inserted successfully!";
+
+        // Render a view page
+        $view = new Template();
+        echo $view->render('views/order-summary.html');
+
+        //var_dump ( $f3->get('SESSION') );
+        session_destroy();
+    }
 }

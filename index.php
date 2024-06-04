@@ -13,6 +13,13 @@ require_once ('vendor/autoload.php');
 // Instantiate the F3 Base class (the router)
 $f3 = Base::instance();
 $con = new Controller($f3);
+$dataLayer = new DataLayer();
+
+/* TESTING
+$myOrder = new Order('breakfast', 'pancakes', 'maple syrup');
+$id = $dataLayer->saveOrder($myOrder);
+echo "Order $id inserted successfully!";
+*/
 
 // Define a default route
 // https://tostrander.greenriverdev.com/328/hello-fat-free/
@@ -45,16 +52,7 @@ $f3->route('GET /menus/dinner', function() {
 
 // Order Summary
 $f3->route('GET /summary', function($f3) {
-
-    // Write data to database
-
-
-    // Render a view page
-    $view = new Template();
-    echo $view->render('views/order-summary.html');
-
-    //var_dump ( $f3->get('SESSION') );
-    session_destroy();
+    $GLOBALS['con']->summary();
 });
 
 // Order Form Part I
